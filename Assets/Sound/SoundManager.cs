@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public FMODUnity.EventReference clickSoundplaceEventHere;
+    public FMODUnity.EventReference clickSoundPlaceEventHere;
+    private FMOD.Studio.EventInstance clickSoundInstance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +17,10 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayClickSound()
+    {
+        clickSoundInstance = FMODUnity.RuntimeManager.CreateInstance(clickSoundPlaceEventHere);
     }
 }
